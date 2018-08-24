@@ -53,6 +53,7 @@ class Enemy(Character):
     # Returns enemyHealth
     # If weapon matches weakness, then extra damage
     def fight(self, combat_item):
+        combat_item = combat_item.lower()
         if combat_item in self.weaknesses:
             attack = randrange(1,7)+randrange(1,7)+randrange(1,7)+5
             print("-=-=-=-=-=- You fend " + self.name + " off with the " + combat_item + ". -=-=-=-=-=-")

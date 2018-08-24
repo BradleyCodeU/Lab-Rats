@@ -7,9 +7,9 @@ class Flashlight():
         self.isOn = False
 
 
-    #getter that returns the interface for the flashlight
+    #getter that returns description/behaviors of flashlight
     #params exist in case a special item changes behavior based on room/other held item
-    def get_interface(self,heldItems,current_room):
+    def info(self,heldItems,current_room):
         if self.isOn and not self.deadBattery:
             print("The "+self.color+" flashlight is switched on and shining. You can TURN "+self.color.upper()+" FLASHLIGHT OFF")
         elif self.isOn and self.deadBattery:
@@ -22,7 +22,7 @@ class Flashlight():
             print("You can REMOVE "+self.color.upper()+" FLASHLIGHT BATTERY")
 
 
-    #procedure that checks for UI keywords and calls other setter methods
+    #procedure that checks for keywords and calls other setter methods. this procedure is called when player tries to use the item.
     def check_input(self,command,heldItems,current_room):
         if command == "TURN "+self.color.upper()+" FLASHLIGHT OFF":
             self.turn_off()

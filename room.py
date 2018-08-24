@@ -1,5 +1,5 @@
 from random import *
-from container import Container
+#from container import Container
 
 # Room class
 # Rooms can have:
@@ -83,6 +83,14 @@ class Room():
 
     # Sets the current room, if permitted by the linked_rooms array
     def move(self, direction, visitedRooms):
+        if direction == "N":
+            direction = "NORTH"
+        if direction == "S":
+            direction = "SOUTH"
+        if direction == "E":
+            direction = "EAST"
+        if direction == "W":
+            direction = "WEST"
         if direction in self.linked_rooms:
             room = self.linked_rooms[direction]
             if room.get_name() == "locked":
