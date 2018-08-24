@@ -68,5 +68,7 @@ class Enemy(Character):
 
     def enemyAttack(self):
         damage = randrange(1,7) + randrange(1,7)
-        print("\n!@#$%^&*!@#$%^&* "+self.name+" attacks you! -"+str(damage)+" HP! *&^%$#@!*&^%$#@!\n")
+        swear = "!@#$%^&*!@#$%^&*"
+        swear = ''.join(sample(swear,len(swear)))
+        print("\n"+swear+" "+self.name+" attacks you! -"+str(damage)+" HP! "+swear+"\n")
         return damage
